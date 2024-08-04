@@ -1,4 +1,4 @@
-import { Button, FormControl, Paper } from "@mui/material";
+import { Box, Button, FormControl, Paper } from "@mui/material";
 import { FmscaViewer } from "../components/FmscaViewer";
 import { useCallback, useState } from "react";
 import { TFMSCAItem } from "../types/gridItem";
@@ -8,8 +8,8 @@ export const Home = () => {
   const [data, setData] = useState<TFMSCAItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const readUploadFile =
-    useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const readUploadFile = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
 
       if (e.target.files) {
@@ -28,10 +28,12 @@ export const Home = () => {
 
         reader.readAsArrayBuffer(e.target.files[0]);
       }
-    }, []);
-  
+    },
+    []
+  );
+
   return (
-    <>
+    <Box paddingX="10px">
       <form>
         <FormControl sx={{ paddingY: "10px" }}>
           <label htmlFor="upload-photo">
@@ -50,9 +52,9 @@ export const Home = () => {
         </FormControl>
       </form>
 
-      <Paper elevation={1}>
+      <Paper elevation={1} >
         <FmscaViewer rows={data} loading={isLoading} />
       </Paper>
-    </>
+    </Box>
   );
 };
