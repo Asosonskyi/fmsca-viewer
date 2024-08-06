@@ -13,16 +13,23 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@ag-grid-community/client-side-row-model": "^32.0.2",
+    "@ag-grid-community/core": "^32.0.2",
+    "@ag-grid-community/react": "^32.0.2",
+    "@ag-grid-enterprise/core": "^32.0.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^5.16.6",
     "@mui/x-data-grid": "^7.12.0",
+    "ag-grid-community": "latest",
+    "ag-grid-enterprise": "latest",
     "date-fns": "^3.6.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.15.0",

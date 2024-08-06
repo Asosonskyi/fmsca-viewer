@@ -1,8 +1,8 @@
 import { Box, Button, FormControl, Paper } from "@mui/material";
-import { FmscaViewer } from "../components/FmscaViewer";
 import { useCallback, useState } from "react";
 import { TFMSCAItem } from "../types/gridItem";
 import { read, utils } from "xlsx";
+import { PivotTable, FmscaViewer } from '../components';
 
 export const Home = () => {
   const [data, setData] = useState<TFMSCAItem[]>([]);
@@ -54,6 +54,10 @@ export const Home = () => {
 
       <Paper elevation={1} >
         <FmscaViewer rows={data} loading={isLoading} />
+      </Paper>
+
+      <Paper elevation={1}>
+        <PivotTable rows={data} />
       </Paper>
     </Box>
   );
